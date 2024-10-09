@@ -1,0 +1,74 @@
+/* Genel admin panel container */
+.admin-panel-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: #f7f7f7; /* Açık gri arka plan */
+  }
+  
+  /* Kart yapısı */
+  .card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    margin: 20px;
+  }
+  
+  /* Başlıklar */
+  .card h2 {
+    color: #333;  /* Yazı rengini koyu yaparak daha görünür hale getirelim */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Input alanları ve select kutusu */
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;  /* Yazı rengini koyu yapalım */
+  }
+  
+  /* Label'lar için stil */
+  label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #333;  /* Label yazı rengini koyu yapalım */
+    font-weight: bold;  /* Label'ları daha belirgin yapalım */
+  }
+  
+  /* Butonlar */
+  .btn, .btn-edit, .btn-delete {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Buton hover efekti */
+  .btn:hover, .btn-edit:hover, .btn-delete:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Listeler */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+    color: #333;  /* Listeler de koyu renkli olacak */
+  }
