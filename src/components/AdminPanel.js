@@ -14,14 +14,14 @@ const AdminPanel = ({ setCategories, setProducts }) => {
 
   // Kategorileri ve ürünleri backend'den çekme
   useEffect(() => {
-    axios.get('http://localhost:5003/categories')
+    axios.get('https://karaalibackend-426b57487d54.herokuapp.com/categories')
       .then(response => {
         setLocalCategories(response.data);
         setCategories(response.data);
       })
       .catch(error => console.error('Kategoriler yüklenemedi:', error));
 
-    axios.get('http://localhost:5003/products')
+    axios.get('https://karaalibackend-426b57487d54.herokuapp.com/products')
       .then(response => {
         setLocalProducts(response.data); // Ürünleri state'e atıyoruz
         setProducts(response.data);
@@ -40,7 +40,7 @@ const AdminPanel = ({ setCategories, setProducts }) => {
 
     const newProduct = { name, price, category, image };
 
-    axios.post('http://localhost:5003/products', newProduct)
+    axios.post('https://karaalibackend-426b57487d54.herokuapp.com/products', newProduct)
       .then(response => {
         alert('Ürün başarıyla eklendi!');
         setLocalProducts([...products, response.data]); // Yeni ürünü listeye ekliyoruz
@@ -64,7 +64,7 @@ const AdminPanel = ({ setCategories, setProducts }) => {
       return;
     }
 
-    axios.post('http://localhost:5003/categories', { name: newCategory })
+    axios.post('https://karaalibackend-426b57487d54.herokuapp.com/categories', { name: newCategory })
       .then(response => {
         setLocalCategories([...categories, response.data]);
         setNewCategory('');
@@ -77,7 +77,7 @@ const AdminPanel = ({ setCategories, setProducts }) => {
 
   // Kategori silme işlemi
   const handleDeleteCategory = (catName) => {
-    axios.delete(`http://localhost:5003/categories/${catName}`)
+    axios.delete(`https://karaalibackend-426b57487d54.herokuapp.com/categories/${catName}`)
       .then(response => {
         setLocalCategories(categories.filter(c => c.name !== catName));
         alert('Kategori başarıyla silindi!');
@@ -102,7 +102,7 @@ const AdminPanel = ({ setCategories, setProducts }) => {
 
     const updatedProduct = { name, price, category, image };
 
-    axios.put(`http://localhost:5003/products/${editingProduct}`, updatedProduct)
+    axios.put(`https://karaalibackend-426b57487d54.herokuapp.com/products/${editingProduct}`, updatedProduct)
       .then(response => {
         const updatedProducts = products.map(p =>
           p.id === editingProduct ? { ...p, ...updatedProduct } : p

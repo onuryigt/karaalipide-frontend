@@ -9,7 +9,7 @@ const QRMenu = () => {
 
   useEffect(() => {
     // Ürünleri çek
-    axios.get('http://localhost:5003/products')
+    axios.get('https://karaalibackend-426b57487d54.herokuapp.com/products')
       .then(response => {
         setProducts(response.data);
       })
@@ -18,7 +18,7 @@ const QRMenu = () => {
       });
 
     // Kategorileri çek
-    axios.get('http://localhost:5003/categories')
+    axios.get('https://karaalibackend-426b57487d54.herokuapp.com/categories')
       .then(response => {
         setCategories(response.data);
       })
