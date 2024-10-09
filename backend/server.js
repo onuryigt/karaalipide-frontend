@@ -8,10 +8,10 @@ app.use(express.json());
 
 // MySQL veritabanı bağlantısı
 const db = mysql.createConnection({
-  host: '92.112.193.81',
-  user: 'root', // MySQL kullanıcı adı
-  password: 'Onur12404545?', // MySQL şifresi
-  database: 'qrmenu', // Daha önce oluşturduğumuz veritabanı adı
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
 });
 
 db.connect((err) => {
